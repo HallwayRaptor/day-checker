@@ -50,7 +50,6 @@ export default function App() {
 			</div>
 			<div>
 				<button onClick={handleReset}>Reset</button>
-				<button onClick={handleReset}>Reset</button>
 			</div>
 		</div>
 	);
