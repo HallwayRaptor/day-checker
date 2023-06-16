@@ -10,6 +10,7 @@ export default function App() {
 	const handleReset = () => {
 		setStep(1);
 		setCounter(0);
+		setDate(new Date());
 	};
 	const handleStepPlus = () => {
 		setStep((step) => step + 1);
