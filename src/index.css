@@ -20,19 +20,77 @@ button {
 }
 
 .container {
-	max-width: 500px;
+	width: 80%;
+	max-width: 400px;
 	margin: 0 auto;
+	padding: 20px;
+	box-sizing: border-box;
+	font-family: "Arial", sans-serif;
 }
 
 .counter {
 	display: flex;
 	align-items: center;
-	justify-content: center;
+	justify-content: space-between;
+	margin-bottom: 20px;
+	padding: 20px;
+	border-radius: 8px;
+	box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.display {
-	margin-top: 1em;
-	background: #f2f2f2;
-	padding: 1em;
+.counter button {
+	background-color: #007bff;
+	color: white;
+	border: none;
+	padding: 10px 20px;
 	border-radius: 5px;
+	font-size: 16px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+}
+
+.counter button:active {
+	transform: scale(0.98);
+}
+
+.counter button:hover {
+	background-color: #0056b3;
+}
+
+.counter input {
+	width: 100%;
+	max-width: 100px;
+	padding: 10px;
+	border: 1px solid #ced4da;
+	border-radius: 5px;
+	font-size: 16px;
+	text-align: center;
+}
+
+.counter input[type="range"] {
+	max-width: 300px;
+}
+
+.display span {
+	font-size: 18px;
+	color: #212529;
+}
+
+button {
+	background-color: #28a745;
+	color: white;
+	border: none;
+	padding: 10px 20px;
+	border-radius: 5px;
+	font-size: 16px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+}
+
+button:active {
+	transform: scale(0.98);
+}
+
+button:hover {
+	background-color: #1e7e34;
 }

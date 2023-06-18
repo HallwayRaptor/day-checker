@@ -12,15 +12,23 @@ export default function App() {
 		setCounter(0);
 		setDate(new Date());
 	};
-	const handleStepPlus = () => {
-		setStep((step) => step + 1);
+
+	const handleStep = () => {
+		setStep((step) => step);
 	};
-	const handleStepMinus = () => step > 1 && setStep((step) => step - 1);
+
+	const handleCounterChange = (e) => {
+		const newCounter = Number(e.target.value);
+		const difference = newCounter - counter;
+		setCounter(newCounter);
+		setDate(
+			(date) => new Date(date.getTime() + 24 * difference * 60 * 60 * 1000)
+		);
+	};
 
 	const handleCounterPlus = () => {
 		setCounter((counter) => counter + step);
 		setDate((date) => new Date(date.getTime() + 24 * step * 60 * 60 * 1000));
-		console.log(date);
 	};
 	const handleCounterMinus = () => {
 		setCounter((counter) => counter - step);
@@ -30,15 +38,22 @@ export default function App() {
 	return (
 		<div className="container">
 			<div className="counter">
-				<button onClick={handleStepMinus}>&minus;</button>
-				<h2>step: {step}</h2>
-				<button onClick={handleStepPlus}>&#43;</button>
+				<input
+					type="range"
+					min="1"
+					max="10"
+					value={step}
+					onChange={(e) => setStep(Number(e.target.value))}
+				/>
+				<span>{step}</span>
 			</div>
+
 			<div className="counter">
 				<button onClick={handleCounterMinus}>&minus;</button>
-				<h2>counter: {counter}</h2>
+				<input type="number" value={counter} onChange={handleCounterChange} />
 				<button onClick={handleCounterPlus}>&#43;</button>
 			</div>
+
 			<div className="display">
 				<span>
 					{counter === 0
